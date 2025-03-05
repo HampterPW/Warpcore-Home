@@ -28,11 +28,6 @@ jobs:
         node-version: 16.x
     - name: Install dependencies and build site
       run: npm i -g pnpm && pnpm up && pnpm i --shamefully-hoist && webpack --bail
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v1
-      with:
-        path: ./build/
-
   deploy:
     environment:
       name: github-pages
